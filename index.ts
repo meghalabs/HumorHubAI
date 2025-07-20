@@ -22,4 +22,8 @@ const messages = await  getMessages()
 // added this messsage already in memory
 const response = await runLLM({ messages })
 
+await addMessages([
+  { role: 'assistant', content: response }
+])
+
 console.log('AI Response:', response)
